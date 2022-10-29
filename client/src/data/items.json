@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "name": "iPhone 14",
+        "price": 89900,
+        "imgUrl": "/images/iphone.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Pixel 7",
+        "price": 60000,
+        "imgUrl": "/images/pixel.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Legion 7",
+        "price": 149999,
+        "imgUrl": "/images/legion.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Galaxy Fold",
+        "price": 169999,
+        "imgUrl": "/images/fold.jpg"
+    }
+]
