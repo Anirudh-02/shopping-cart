@@ -1,14 +1,19 @@
 const Sequelize = require('sequelize')
 require('dotenv').config()
 
-const db = new Sequelize('shopdb', 'shopper', 'shoppass', {
-    host: process.env.MYSQL_URL,
-    dialect: 'mysql',
-    pool: {
-        min: 0,
-        max: 5
-    }
-})
+let db
+if (process.env.MYSQL_URL == 'localhost') {
+    db = new Sequelize('shopdb', 'shopper', 'shoppass', {
+        host: 'localhost',
+        dialect: 'mysql',
+        pool: {
+            min: 0,
+            max: 5
+        }
+    })        
+} else {
+    db = new Sequelize(process.env.MYSQL_URL)
+}
 
 const User = db.define('users', {
     id: {
