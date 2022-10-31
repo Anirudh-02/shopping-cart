@@ -3,6 +3,7 @@ const route = require('express').Router()
 const { Op } = require('sequelize')
 
 route.get('/', (req, res) => {
+    console.log({logging: req.query.q});
     //send array of products from database
     Product.findAll({
         attributes: ['id', 'name', 'price', 'imgUrl'],
