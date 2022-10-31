@@ -1,7 +1,8 @@
 const Sequelize = require('sequelize')
+require('dotenv').config()
 
 const db = new Sequelize('shopdb', 'shopper', 'shoppass', {
-    host: 'localhost',
+    host: process.env.MYSQL_URL,
     dialect: 'mysql',
     pool: {
         min: 0,

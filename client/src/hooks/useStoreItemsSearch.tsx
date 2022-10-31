@@ -2,11 +2,13 @@ import { useState, useEffect } from "react"
 
 export function useStoreItemsSearch(query: string) {
     const [value, setValue] = useState<any[]>([])
+    const api_url = `${import.meta.env.VITE_API_URL}/api/products?` + new URLSearchParams({
+        q: query
+    })
+    
     useEffect(() => {
         let controller = new AbortController()
-        fetch('http://localhost:4789/api/products?' + new URLSearchParams({
-            q: query
-        }), {
+        fetch(api_url, {
             signal: controller.signal
         })
             .then((res) => res.json())
